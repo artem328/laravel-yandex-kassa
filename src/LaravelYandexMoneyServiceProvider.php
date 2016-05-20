@@ -1,10 +1,10 @@
 <?php
 
-namespace Artem328\LaravelYandexMoney;
+namespace Artem328\LaravelYandexKassa;
 
 use Illuminate\Support\ServiceProvider;
 
-class LaravelYandexMoneyServiceProvider extends ServiceProvider
+class LaravelYandexKassaServiceProvider extends ServiceProvider
 {
     /**
      * Perform post-registration booting of services.
