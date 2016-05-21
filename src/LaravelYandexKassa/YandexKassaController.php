@@ -94,7 +94,6 @@ class YandexKassaController extends Controller
             $responseParameters = array_merge($responseParameters, $response);
         }
 
-
         return $responseParameters;
     }
 
@@ -131,7 +130,9 @@ class YandexKassaController extends Controller
         $attributes = [];
 
         foreach ($parameters as $name => $value) {
-            $attributes[] = htmlspecialchars($name, ENT_XML1) . '="' . htmlspecialchars($value, ENT_XML1) . '"';
+            if (is_string($name)) {
+                $attributes[] = htmlspecialchars($name, ENT_XML1) . '="' . htmlspecialchars($value, ENT_XML1) . '"';
+            }
         }
 
         return !empty($attributes) ? ' ' . implode(' ', $attributes) : '';
