@@ -3,32 +3,17 @@
     "type": "library",
     "description": "Yandex Kassa integration with Laravel framework",
     "keywords": [
-        "Artem328",
-        "Laravel",
-        "Yandex",
-        "Yandex Kassa",
-        "Yandex Money",
-        "Яндекс",
-        "Яндекс Касса",
-        "Яндекс Деньги"
+        "laravel", "yandex", "kassa", "money",
+        "яндекс", "касса", "деньги"
     ],
     "homepage": "https://github.com/artem328/laravel-yandex-kassa",
     "license": "MIT",
     "authors": [
-        {
-            "name": "Artem Vozhzhov",
-            "email": "vojjov.artem@ya.ru",
-            "role": "Developer"
-        }
+        {"name": "Artem Vozhzhov", "email": "vojjov.artem@ya.ru", "role": "Developer"}
     ],
     "require": {
         "illuminate/support": "~5.1",
         "php" : "~5.5|~7.0"
-    },
-    "require-dev": {
-        "phpunit/phpunit" : "4.*",
-        "scrutinizer/ocular": "~1.1",
-        "squizlabs/php_codesniffer": "~2.3"
     },
     "autoload": {
         "psr-4": {
@@ -37,17 +22,6 @@
         "files": [
             "src/LaravelYandexKassa/helpers.php"
         ]
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Artem328\\LaravelYandexKassa\\": "tests"
-        },
-        "files": [
-            "src/LaravelYandexKassa/helpers.php"
-        ]
-    },
-    "scripts": {
-        "test": "phpunit"
     },
     "extra": {
         "branch-alias": {
