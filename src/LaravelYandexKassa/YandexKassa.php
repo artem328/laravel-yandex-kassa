@@ -2,8 +2,8 @@
 
 namespace Artem328\LaravelYandexKassa;
 
-use Artem328\LaravelYandexKassa\Exception\YandexKassaInvalidParameterException;
-use Artem328\LaravelYandexKassa\Exception\YandexKassaNoPaymentTypesProvidedException;
+use Artem328\LaravelYandexKassa\Exceptions\YandexKassaInvalidParameterException;
+use Artem328\LaravelYandexKassa\Exceptions\YandexKassaNoPaymentTypesProvidedException;
 
 class YandexKassa
 {
@@ -59,7 +59,7 @@ class YandexKassa
      * Get scId parameter
      *
      * @return string
-     * @throws \Artem328\LaravelYandexKassa\Exception\YandexKassaInvalidParameterException
+     * @throws \Artem328\LaravelYandexKassa\Exceptions\YandexKassaInvalidParameterException
      */
     public function getScId()
     {
@@ -76,7 +76,7 @@ class YandexKassa
      * Get shopId parameter
      *
      * @return string
-     * @throws \Artem328\LaravelYandexKassa\Exception\YandexKassaInvalidParameterException
+     * @throws \Artem328\LaravelYandexKassa\Exceptions\YandexKassaInvalidParameterException
      */
     public function getShopId()
     {
@@ -91,7 +91,7 @@ class YandexKassa
 
     /**
      * @return \Illuminate\Support\Collection
-     * @throws \Artem328\LaravelYandexKassa\Exception\YandexKassaNoPaymentTypesProvidedException
+     * @throws \Artem328\LaravelYandexKassa\Exceptions\YandexKassaNoPaymentTypesProvidedException
      */
     public function getPaymentTypes()
     {
@@ -104,5 +104,4 @@ class YandexKassa
 
         return $this->paymentTypes;
     }
-
 }

@@ -1,5 +1,5 @@
 <?php
-namespace Artem328\LaravelYandexKassa\Exception;
+namespace Artem328\LaravelYandexKassa\Exceptions;
 
 use Exception;
 

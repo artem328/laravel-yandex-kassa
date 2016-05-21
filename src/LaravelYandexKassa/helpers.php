@@ -55,7 +55,7 @@ function yandex_kassa_form_method()
  * Helper function for getting scId parameter
  *
  * @return string
- * @throws \Artem328\LaravelYandexKassa\Exception\YandexKassaInvalidParameterException
+ * @throws \Artem328\LaravelYandexKassa\Exceptions\YandexKassaInvalidParameterException
  */
 function yandex_kassa_sc_id()
 {
@@ -66,7 +66,7 @@ function yandex_kassa_sc_id()
  * Helper function for getting shopId parameter
  *
  * @return string
- * @throws \Artem328\LaravelYandexKassa\Exception\YandexKassaInvalidParameterException
+ * @throws \Artem328\LaravelYandexKassa\Exceptions\YandexKassaInvalidParameterException
  */
 function yandex_kassa_shop_id()
 {
@@ -77,7 +77,7 @@ function yandex_kassa_shop_id()
  * Helper function for getting payment types
  *
  * @return \Illuminate\Support\Collection
- * @throws \Artem328\LaravelYandexKassa\Exception\YandexKassaNoPaymentTypesProvidedException
+ * @throws \Artem328\LaravelYandexKassa\Exceptions\YandexKassaNoPaymentTypesProvidedException
  */
 function yandex_kassa_payment_types()
 {
