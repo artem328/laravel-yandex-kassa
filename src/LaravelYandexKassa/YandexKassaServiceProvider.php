@@ -4,7 +4,7 @@ namespace Artem328\LaravelYandexKassa;
 
 use Illuminate\Support\ServiceProvider;
 
-class LaravelYandexKassaServiceProvider extends ServiceProvider
+class YandexKassaServiceProvider extends ServiceProvider
 {
     /**
      * Perform post-registration booting of services.
@@ -20,9 +20,15 @@ class LaravelYandexKassaServiceProvider extends ServiceProvider
             require __DIR__ . '/../routes.php';
         }
 
+        $this->loadTranslationsFrom(__DIR__ . '/../lang', 'yandex_kassa');
+
         $this->publishes([
-            __DIR__ . '/../config/yandex_kassa.php' => config_path('yandex_kassa.php')
+            __DIR__ . '/../config/yandex_kassa.php' => config_path('payment_types.php')
         ], 'config');
+
+        $this->publishes([
+            __DIR__ . '/../lang' => resource_path('lang/vendor/yandex_kassa')
+        ], 'lang');
     }
 
     /**
@@ -33,5 +39,9 @@ class LaravelYandexKassaServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(__DIR__ . '/../config/yandex_kassa.php', 'yandex_kassa');
+
+        $this->app->singleton('yandexkassa', function() {
+            return new YandexKassa();
+        });
     }
 }

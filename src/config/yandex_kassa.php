@@ -47,7 +47,7 @@ return [
     |
     | Секретное слово для формирования md5-хэша
     |
-    | @see https://tech.yandex.ru/money/doc/payment-solution/shop-config/parameters-docpage/
+    | @see https://tech.yandex.com/money/doc/payment-solution/shop-config/parameters-docpage/
     |
     */
     'shop_password' => '',
@@ -64,5 +64,29 @@ return [
             'url' => '/yandex_kassa/paymentAviso',
             'action' => []
         ]
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Payment types
+    | Способы оплаты
+    |--------------------------------------------------------------------------
+    |
+    | Payment types that will be given in payment form.
+    | All available payment types you can find
+    | in Yandex Kassa documentation
+    |
+    | Способы оплаты, которые будут предложены в форме
+    | оплаты. Все доступные способы оплаты можно найти
+    | в документации Яндекс Кассы
+    |
+    | @see https://tech.yandex.com/money/doc/payment-solution/reference/payment-type-codes-docpage/
+    |
+    */
+    'payment_types' => [
+        'PC', 'AC', 'MC', 'GP',
+        'WM', 'SB', 'MP', 'AB',
+        'MA', 'PB', 'QW', 'KV',
+        'QP'
     ]
 ];
