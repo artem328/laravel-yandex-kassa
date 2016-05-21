@@ -13,7 +13,6 @@ class YandexKassaServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        require_once __DIR__ . '/../helpers.php';
 
         /** @noinspection PhpUndefinedMethodInspection */
         if (!$this->app->routesAreCached()) {
@@ -21,14 +20,19 @@ class YandexKassaServiceProvider extends ServiceProvider
         }
 
         $this->loadTranslationsFrom(__DIR__ . '/../lang', 'yandex_kassa');
+        $this->loadViewsFrom(__DIR__ . '/../views', 'yandex_kassa');
 
         $this->publishes([
-            __DIR__ . '/../config/yandex_kassa.php' => config_path('payment_types.php')
+            __DIR__ . '/../config/yandex_kassa.php' => config_path('yandex_kassa.php')
         ], 'config');
 
         $this->publishes([
             __DIR__ . '/../lang' => resource_path('lang/vendor/yandex_kassa')
         ], 'lang');
+
+        $this->publishes([
+            __DIR__ . '/../views' => resource_path('views/vendor/yandex_kassa')
+        ], 'view');
     }
 
     /**
@@ -44,4 +48,18 @@ class YandexKassaServiceProvider extends ServiceProvider
             return new YandexKassa();
         });
     }
+
+    /**
+     * Get the services provided by the provider.
+     *
+     * @return array
+     */
+    public function provides()
+    {
+        return [
+            'yandexkassa'
+        ];
+    }
+
+
 }

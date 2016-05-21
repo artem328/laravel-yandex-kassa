@@ -33,12 +33,18 @@
     "autoload": {
         "psr-4": {
             "Artem328\\LaravelYandexKassa\\": "src/LaravelYandexKassa"
-        }
+        },
+        "files": [
+            "src/LaravelYandexKassa/helpers.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
             "Artem328\\LaravelYandexKassa\\": "tests"
-        }
+        },
+        "files": [
+            "src/LaravelYandexKassa/helpers.php"
+        ]
     },
     "scripts": {
         "test": "phpunit"
