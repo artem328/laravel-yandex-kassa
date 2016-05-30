@@ -15,7 +15,7 @@ return [
     | значение этой опции в false
     |
     */
-    'test_mode' => true,
+    'test_mode' => env('YANDEX_KASSA_TEST_MODE', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -34,8 +34,8 @@ return [
     | @see https://money.yandex.ru/joinups
     |
     */
-    'shop_id' => null,
-    'sc_id' => null,
+    'shop_id' => env('YANDEX_KASSA_SHOP_ID', null),
+    'sc_id' => env('YANDEX_KASSA_SC_ID', null),
 
     /*
     |--------------------------------------------------------------------------
@@ -50,7 +50,7 @@ return [
     | @see https://tech.yandex.com/money/doc/payment-solution/shop-config/parameters-docpage/
     |
     */
-    'shop_password' => '',
+    'shop_password' => env('YANDEX_KASSA_SHOP_PASSWORD', ''),
 
     /*
     |--------------------------------------------------------------------------
