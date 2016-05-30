@@ -19,6 +19,6 @@ app('router')->group([
 
     $router->post(
         config('yandex_kassa.route.paymentAviso.url'),
-        yandex_kassa_route_action('YandexKassaController@test', config('yandex_kassa.route.paymentAviso.action', []))
+        yandex_kassa_route_action('YandexKassaController@paymentAviso', config('yandex_kassa.route.paymentAviso.action', []))
     );
 });
