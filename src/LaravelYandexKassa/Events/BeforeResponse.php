@@ -3,6 +3,7 @@
 namespace Artem328\LaravelYandexKassa\Events;
 
 use Artem328\LaravelYandexKassa\Requests\YandexKassaRequest;
+use Artem328\LaravelYandexKassa\Responses\YandexKassaResponse;
 
 class BeforeResponse extends YandexKassaEvent
 {
@@ -12,18 +13,18 @@ class BeforeResponse extends YandexKassaEvent
     public $request;
 
     /**
-     * @var array
+     * @var \Artem328\LaravelYandexKassa\Responses\YandexKassaResponse
      */
-    public $responseParameters;
+    public $response;
 
     /**
      * BeforeResponse constructor.
      * @param \Artem328\LaravelYandexKassa\Requests\YandexKassaRequest $request
-     * @param array $responseParameters
+     * @param \Artem328\LaravelYandexKassa\Responses\YandexKassaResponse $response
      */
-    public function __construct(YandexKassaRequest $request, $responseParameters)
+    public function __construct(YandexKassaRequest $request, YandexKassaResponse $response)
     {
         $this->request = $request;
-        $this->responseParameters = $responseParameters;
+        $this->response = $response;
     }
 }
