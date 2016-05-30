@@ -60,7 +60,11 @@ Also you need to publish configs, and fill some required data as `sc_id`, `shop_
 
     php artisan vendor:publish --provider="Artem328\LaravelYandexKassa\YandexKassaServiceProvider" --tag="config"
 
-Now config file `yandex_kassa.php` will be placed at your application config directory.
+Now config file `yandex_kassa.php` will be placed at your application config directory. In your application .env file you can set some options:
+ * `test_mode` as `YANDEX_KASSA_TEST_MODE`
+ * `shop_id` as `YANDEX_KASSA_SHOP_ID`
+ * `sc_id` as `YANDEX_KASSA_SC_ID`
+ * `shop_password` as `YANDEX_KASSA_SHOP_PASSWORD`
 
 ### Views
 As default this package use bootstrap 3 form layout that should be included into your page. You can customize this form by publishing views. To do this, run this command:
