@@ -101,6 +101,11 @@ class YandexKassaResponse extends Response implements ArrayAccess
     {
         $this->delete($key);
     }
+
+    public function has($key)
+    {
+        return isset($this->attributes[$key]);
+    }
     
     /**
      * Whether a offset exists
@@ -116,7 +121,7 @@ class YandexKassaResponse extends Response implements ArrayAccess
      */
     public function offsetExists($offset)
     {
-        return isset($this->attributes[$offset]);
+        return $this->has($offset);
     }
 
     /**
