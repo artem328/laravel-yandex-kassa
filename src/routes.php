@@ -6,7 +6,7 @@ app('router')->group([
 
     /** @var \Illuminate\Routing\Router $router */
     $router = app('router');
-
+    
     $router->post(
         config('yandex_kassa.route.checkOrder.url'),
         yandex_kassa_route_action('YandexKassaController@checkOrder', config('yandex_kassa.route.checkOrder.action', []))

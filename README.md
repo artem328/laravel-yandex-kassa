@@ -124,7 +124,7 @@ Yandex Kassa calls your application callbacks and waiting for response. You can 
             } else {
                 // Logic on non valid hash
                 // You don't need to set response code to 1
-                // YandexKassaRequest do it automatically
+                // YandexKassaResponse do it automatically
             }
         }
     }
@@ -141,7 +141,7 @@ Yandex Kassa calls your application callbacks and waiting for response. You can 
     {
         /**
          * @param \Artem328\LaravelYandexKassa\Events\BeforeCheckOrderResponse
-         * @return array|null
+         * @return void
          */
         public function handle(BeforeCheckOrderResponse $event)
         {
@@ -149,16 +149,20 @@ Yandex Kassa calls your application callbacks and waiting for response. You can 
             // You can change response parameters before controller
             // will show it
             if ($event->request->get('customField') != '1') {
-                $event->responseParameters['code'] = 100;
-                $event->responseParameters['message'] = 'Some checkbox was not checked';
-                // You must to return response parameters array,
-                // for apply changes
-                return $event->responseParameters;
+                // You can set some values by shortcut methods
+                $event->response->setCode(100);
+                $event->response->setMessage('Some checkbox was not checked');
+
             }
 
-            // If there's no parameters changes
-            // just return null or empty array
-            return null;
+            // The attribute someField with value someValue will shown
+            // in xml element
+            $event->response->set('someField', 'someValue');
+
+            if ($event->response->has('someField')) {
+                // You can access response attributes as array
+                $event->response['oneMoreField'] = 'extraValue';
+            }
         }
     }
 ```
