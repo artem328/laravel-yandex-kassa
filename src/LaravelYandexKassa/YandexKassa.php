@@ -8,6 +8,11 @@ use Artem328\LaravelYandexKassa\Exceptions\YandexKassaNoPaymentTypesProvidedExce
 class YandexKassa
 {
     /**
+     * Current version of Laravel Yandex Kassa
+     */
+    const VERSION = '1.0.0';
+
+    /**
      * Payment form submit url
      *
      * @var string
@@ -34,6 +39,16 @@ class YandexKassa
      * @var \Illuminate\Support\Collection
      */
     protected $paymentTypes;
+
+    /**
+     * Get current version of package
+     *
+     * @return string
+     */
+    public function getVersion()
+    {
+        return self::VERSION;
+    }
 
     /**
      * Get form action url
