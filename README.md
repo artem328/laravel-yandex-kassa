@@ -181,10 +181,7 @@ To listen events you should add some code to `app/Providers/EventServiceProvider
         protected $listen = [
             'Artem328\LaravelYandexKassa\Events\BeforeCheckOrderResponse' => [
                 'App\Listeners\CheckOrderRequisites',
-                // You can add more than one listener and every
-                // listener can return own parameters. Incoming
-                // parameters WILL NOT extend. But response
-                // parameters WILL override in listeners order
+                // Add as many listeners as you need
                 // 'App\Listeneres\AddCheckOrderRecord',
             ],
             'Artem328\LaravelYandexKassa\Events\BeforePaymentAvisoResponse' => [
