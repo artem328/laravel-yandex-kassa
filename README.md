@@ -83,7 +83,7 @@ Localization files will be placed to resource directory `lang/vendor/yandex_kass
 #### Publish all resources
 If you want to publish config, views and languages, just run this command:
 
-    php artisan vender:publish --provider="Artem328\LaravelYandexKassa\YandexKassaServiceProvider"
+    php artisan vendor:publish --provider="Artem328\LaravelYandexKassa\YandexKassaServiceProvider"
 
 ### Show payment form
 To show payment form in your layout just add this code:
