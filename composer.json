@@ -26,6 +26,14 @@
     "extra": {
         "branch-alias": {
             "dev-master": "1.0-dev"
+        },
+        "laravel": {
+            "providers": [
+                "Artem328\\LaravelYandexKassa\\YandexKassaServiceProvider"
+            ],
+            "aliases": {
+                "YandexKassa": "Artem328\\LaravelYandexKassa\\Facades\\YandexKassa"
+            }
         }
     }
 }
