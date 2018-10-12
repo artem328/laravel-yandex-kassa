@@ -24,9 +24,10 @@ Above installation can also be simplify by using the following command:
 
     composer require "artem328/laravel-yandex-kassa=~1.0.*"
 
-## Usage
+<details>
+  <summary>For Laravel 5.2 - 5.4</summary>
 
-### Service Provider
+##### Service Provider
 For using Laravel Yandex Kassa Package, you need to add service provider into `config/app.php` file:
 ```php
 <?php
@@ -40,7 +41,7 @@ For using Laravel Yandex Kassa Package, you need to add service provider into `c
     ];
 ```
 
-### Alias
+##### Alias
 For resolving `YandexKassa` class instance you can add such line into `config/app.php` file:
 ```php
 <?php
@@ -53,7 +54,45 @@ For resolving `YandexKassa` class instance you can add such line into `config/ap
         //...
     ];
 ```
-and now call methods statically from `YandexKassa` class or you can use helper function `yandex_kassa()`
+
+</details>
+
+<details>
+  <summary>For Laravel 5.0 - 5.1</summary>
+
+##### Service Provider
+For using Laravel Yandex Kassa Package, you need to add service provider into `config/app.php` file:
+```php
+<?php
+    return [
+        //...
+        'providers' => [
+            //...
+            'Artem328\LaravelYandexKassa\YandexKassaServiceProvider',
+        ],
+        //...
+    ];
+```
+
+##### Alias
+For resolving `YandexKassa` class instance you can add such line into `config/app.php` file:
+```php
+<?php
+    return [
+        //...
+        'aliases' => [
+            //...
+            'YandexKassa' => 'Artem328\LaravelYandexKassa\Facades\YandexKassa',
+        ],
+        //...
+    ];
+```
+
+</details>
+
+## Usage
+
+Call methods statically from `YandexKassa` class or use helper function `yandex_kassa()`
 
 ### Configs
 Also you need to publish configs, and fill some required data as `sc_id`, `shop_id` and `shop_password`. To publish configs, run this command:
