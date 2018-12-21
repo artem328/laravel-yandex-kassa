@@ -1,4 +1,4 @@
-# Laravel Yandex Kassa
+# \[NOT MAINTAINED\] Laravel Yandex Kassa
 
 Yandex Money integration with Laravel framework
 
